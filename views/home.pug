@@ -30,4 +30,6 @@ html
             p Prix: #{guit.price} $
             p Desccription: #{guit.comment}
             p Vendue par #{guit.poster}
+            if user
+                form(method="post", action="api/buy"): button(type="submit") Acheter
             p ------------

@@ -137,10 +137,12 @@ app.post('/api/guit', ( req, res) => {
                         res.redirect('/');
                     })
                 })
-
         })
+});
 
-
+app.post('/api/buy', ( req, res ) => {
+    
+   res.redirect('/');
 });
 
 db.sync().then(() => {
