@@ -141,7 +141,7 @@ app.post('/api/guit', ( req, res) => {
 });
 
 app.post('/api/buy', ( req, res ) => {
-    
+
    res.redirect('/');
 });
 
