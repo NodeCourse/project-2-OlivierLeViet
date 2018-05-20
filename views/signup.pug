@@ -1,0 +1,15 @@
+html
+    header
+        title Olivier
+        include includes/navbar
+        link(rel="stylesheet", href="/css/signup.css")
+
+    body
+        div(class="container")
+            p FILL THE FORM
+            form(method="post", action="api/signup")
+                ul
+                    li: input(type="text", name="username", placeholder="Username")
+                    li: input(type="text", name="email", placeholder="Email")
+                    li: input(type="text", name="password", placeholder="Password")
+                    li: button(type="submit") Sign Up
