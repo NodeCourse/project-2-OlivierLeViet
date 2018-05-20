@@ -34,6 +34,9 @@ const Guitares = db.define('guitares', {
     price: {
         type: Sequelize.INTEGER
     },
+    comment: {
+        type: Sequelize.STRING
+    },
     poster: {
         type: Sequelize.STRING
     }
@@ -123,11 +126,12 @@ app.post('/api/guit', ( req, res) => {
     const posterT = req.user.username;
     const price = req.body.price;
     const cat = req.body.category;
+    const cmt = req.body.comment;
     Guitares
         .sync()
         .then(() => {
             Guitares
-                .create({poster: posterT, price: price, category: cat})
+                .create({poster: posterT, price: price, category: cat, comment: cmt})
                 .then((guits) => {
                     req.login(guits, () => {
                         res.redirect('/');
