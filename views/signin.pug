@@ -1,0 +1,17 @@
+html
+    head
+        title Olivier aa
+        include includes/navbar
+        link(rel="stylesheet", href="/css/signin.css")
+
+    body
+
+        div(class="container")
+            p FILL THE FORM
+            form(method="post", action="api/signin")
+                ul
+                    li: input(type="text", name="username", placeholder="Username")
+                    li: input(type="password", name="password", placeholder="Password")
+                    li: button(type="submit") Sign in
+
+

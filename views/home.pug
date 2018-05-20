@@ -1,0 +1,35 @@
+html
+    head
+        title Olivier
+        include includes/navbar
+            link(rel="stylesheet", href="/css/main.css")
+
+    body
+
+    div(class="us")
+        if user
+            p Bienvenue #{user.username}
+
+    div(class="fform")
+        if user
+            form(method="post", action="api/guit")
+                ul
+                    li: p Guitare à vendre
+                    li: select(name="category")
+                        option(value="Classic") Classic
+                        option(value="Country") Country
+                        option(value="Jazz") Jazz
+                    li: input(type="number", name="price", placeholder="Price")
+                    li: input(type="text", name="comment", placeholder="Comment")
+                    li: button(type="submit") Poster
+
+
+    div(class="guit")
+        for guit in guits
+            p Guitare: #{guit.category}
+            p Prix: #{guit.price} $
+            p Desccription: #{guit.comment}
+            p Vendue par #{guit.poster}
+            if user
+                form(method="post", action="api/buy"): button(type="submit") Acheter
+            p ------------
